@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Obsidian — Стеклянная Эстетика</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="glass-bg"></div>
+
+<header>
+    <div class="container">
+        <div class="logo">◈ OBSIDIAN ◈</div>
+        <nav>
+            <a href="#home">Главная</a>
+            <a href="#features">Проекты</a>
+            <a href="#tools">Инструменты</a>
+            <a href="#generator">Генератор</a>
+        </nav>
+        <div class="header-actions">
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+            <button class="admin-btn" id="adminBtn">🔮 Админка</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-badge">Стеклянная Эстетика</div>
+            <h1>Твёрдость <span class="accent-text">формы</span><br>и текучесть <span class="accent-text">мысли</span></h1>
+            <div class="hero-stats">
+                <div class="stat"><span id="statCounter">0</span> <span>идей сгенерировано</span></div>
+                <div class="stat"><span>∞</span> <span>вдохновения</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Проекты</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-preview" style="background-image: url('https://images.pexels.com/photos/577898/pexels-photo-577898.jpeg?auto=compress&cs=tinysrgb&w=600');"></div>
+                    <h3>Обсидиановая Колода</h3>
+                    <p>54 карты с текстурами вулканического стекла</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-preview" style="background-image: url('https://images.pexels.com/photos/1585322/pexels-photo-1585322.jpeg?auto=compress&cs=tinysrgb&w=600');"></div>
+                    <h3>Стеклянная Типографика</h3>
+                    <p>Шрифт с оптическим искажением и преломлением</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-preview" style="background-image: url('https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=600');"></div>
+                    <h3>Лавовая Лампа UI</h3>
+                    <p>Жидкие переходы и текучие интерфейсы</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tools" class="tools">
+        <div class="container">
+            <h2>Инструменты</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">🎲</div>
+                    <h3>Рандомайзер Цитат</h3>
+                    <p class="tool-quote" id="quoteDisplay">«Творчество — это умный риск»</p>
+                    <button class="quote-btn" id="newQuoteBtn">Новая Цитата</button>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">🎨</div>
+                    <h3>Генератор Палитры</h3>
+                    <button id="paletteBtn">Новая Палитра</button>
+                    <div id="paletteResult" class="palette-row"></div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">🏛️</div>
+                    <h3>Архитектурный Термин</h3>
+                    <p id="termDisplay" class="tool-term">Катакомбный модерн</p>
+                    <button id="newTermBtn">Новый Термин</button>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">⏳</div>
+                    <h3>Таймер Концентрации</h3>
+                    <div id="timerDisplay" class="tool-timer">25:00</div>
+                    <div class="timer-buttons">
+                        <button id="startTimerBtn">▶ Старт</button>
+                        <button id="stopTimerBtn">⏹ Стоп</button>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">🔄</div>
+                    <h3>Сравнение До / После</h3>
+                    <div class="comparison-container">
+                        <img src="https://placehold.co/600x300/2a1e3a/ccc?text=ДО" class="comparison-img before">
+                        <img src="https://placehold.co/600x300/5a3e8c/fff?text=ПОСЛЕ" class="comparison-img after">
+                        <input type="range" min="0" max="100" value="50" class="slider-input">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="generator" class="generator">
+        <div class="container">
+            <h2>Генератор Контент-Идей</h2>
+            <div class="generator-card">
+                <p>Тема (1-2 слова):</p>
+                <input type="text" id="ideaTopic" placeholder="например: обсидиан, стекло, вулкан">
+                <button id="generateIdeaBtn">Сгенерировать</button>
+                <div id="ideaResult" class="idea-result"></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid"><div>◈ OBSIDIAN ◈</div><div>Генеративная Студия</div><div>2025</div></div>
+    </div>
+</footer>
+
+<!-- Админка -->
+<div id="adminModal" class="admin-modal">
+    <div class="admin-modal-content">
+        <span class="admin-modal-close">&times;</span>
+        <div id="adminLoginBlock">
+            <h3>Вход в Админку</h3>
+            <input type="password" id="adminPassword" placeholder="Пароль">
+            <button id="adminLoginBtn">Войти</button>
+            <div id="adminError" class="error-msg"></div>
+        </div>
+        <div id="adminPanelBlock" style="display: none;">
+            <div class="admin-header">✨ Панель Управления ✨</div>
+            <div class="admin-stats">
+                <div class="admin-stat-item">📊 Просмотров: <strong id="viewCount">0</strong></div>
+                <div class="admin-stat-item">💡 Сгенерировано идей: <strong id="totalIdeasCount">0</strong></div>
+                <div class="admin-stat-item">📌 Последняя идея: <span id="lastIdea">—</span></div>
+            </div>
+            <button id="adminLogoutBtn" class="logout-btn">Выйти</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
